@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Table</title>
+</head>
+<body>
+  <!-- table
+  태그는 무조건 표를 보여줄때만 써야됨
+
+  표에는 행(줄), 열(칸)이 있는데
+  행은 tr 태그를 쓰고
+  칸은 th(제목을 의미함), td태그를 씀
+    -->
+
+  <!--
+  emmet활용
+  table[border=1]>tbody>(tr>th{Header $}*2)+(tr>td{Data $}*2)+(tr>td{Data $@3}*2)
+  -->
+
+  <table border="1">
+    <tbody>
+    <tr>
+      <th>Header 1</th>
+      <th>Header 2</th>
+    </tr>
+    <tr>
+      <td>Data 1</td>
+      <td>Data 2</td>
+    </tr>
+    <tr>
+      <td>Data 3</td>
+      <td>Data 4</td>
+    </tr>
+    </tbody>
+  </table>
+</body>
+</html>

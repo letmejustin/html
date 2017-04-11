@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>CSS3 Style Property Basic</title>
+<style>
+  /*
+  ~ inline태그는 위아래 여백(margin)을 가질 수 없음.(특성상)
+
+  ~ display 속성 값이 block에서 inline-block으로 변하면
+  너비가 변함.
+
+  ~ display가 inline에서 inline-block으로 변하면
+  위 아래 여백 값을 줄 수 있음.
+
+  */
+  #box {
+    display: inline-block;
+    opacity: 0.3;
+    border: 10px dashed black;
+    padding: 10px 20px 30px 30px;
+    margin: 100px 200px 300px 400px;
+  }
+
+  #span{
+    display: inline-block;
+    margin: 10px;
+    padding: 10px;
+  }
+</style>
+</head>
+<body>
+  <span id="span">Dummy</span>
+  <div id="box">
+    <span>Lorem ipsum dolor sit amet.</span>
+  </div>
+  <span>Dummy</span>
+</body>
+</html>

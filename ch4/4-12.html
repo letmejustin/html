@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Background-image</title>
+  <style>
+  /*
+    경로에는 "상대경로"와 "절대경로"가 있음
+    1) 상대경로
+      나 자신(지금 현재 열려있는 file을 기준으로 경로를 사용하는 것)
+
+       상대경로를 쓸 때 사용하는 두가지 문법이 있음
+       현재 내가 위치한 경로를 표현하는 방법: .
+       현재 내가 위치한 경로의 한단계 상위 폴더를 표현하는 방법은: ..
+
+    2) 절대경로
+      나 자신(지금 현재 열려있는 file 상관 없이 컴퓨터에서 제공하는 경로를 사용하는 것)
+      C드라이브부터 시작되는 총경로
+
+  */
+  body{
+    background-image: url("./jajq.png");
+  }
+  .body{ /*'앞에 '.'이 있으면 클래스를 의미함 */
+    font-size: 20px;
+    color: red;
+  }
+  #body{ /*'#'이 있으면 아이디를 의미함*/
+    font-size: 50px;
+    font-weight: bold;
+    color: gray;
+    background-color: blue;
+  }
+  </style>
+</head>
+<body>
+  <h1 id="body">아이디</h1>
+  <h1>아이디가 아님</h1>
+  <h1 class="body">클래스임</h1>
+  <img src="" alt="">
+</body>
+</html>

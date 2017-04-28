@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>CSS3 Property Basic</title>
+  <style>
+  /*
+    body 아래 있는 div태그들은 모조리 다 아래 스타일을 적용시켜라
+    후손 선택자!!
+
+    -----------------------------------------------
+
+  <div>
+    <span></span>
+    <div>
+      <span></span>
+    </div>
+  </div>
+
+  div span{
+
+
+  }
+
+  div 아래 있는 span태그들은 위의 스타일을 적용시켜라
+  */
+
+  body > div {
+    margin: 10px;
+    padding: 10px;
+    width: 100px;
+    height: 100px;
+    border: 10px solid black;
+  }
+
+  div:first-child{
+    background: red;
+    box-sizing: content-box;
+  }
+
+  div:nth-child(2) {
+    background: orange;
+    box-sizing: border-box;
+  }
+
+  #box1 {
+    background: green;
+    box-sizing: content-box;
+  }
+
+  #box2{
+    background: blue;
+    box-sizing: border-box;
+  }
+
+    /*
+      1) 기본에 충실한 아이디 선택자와 클래스 선택자를 선호함.
+
+      2) 자손 선택자
+        ">"
+        ex) body > div
+
+      3) 후손 선택자
+
+      3가지를 알면 90프로 이상 페이지 구성한느 선택자를 쓸 수 있음.
+
+    */
+
+
+  </style>
+</head>
+<body>
+  <div></div>
+  <div></div>
+  <div id="box1"></div>
+  <div id="box2"></div>
+</body>
+</html>

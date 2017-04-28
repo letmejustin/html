@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    #box {
+      position: relative;
+      height: 150px;
+      overflow: scroll;
+    }
+    .box {
+      width: 100px; height: 100px;
+      position: absolute;
+    }
+    .bg-red {
+      background-color: red;
+      left: 10px;
+      top: 10px;
+      z-index: 100;
+    }
+    .bg-green {
+      background-color: green;
+      left: 40px;
+      top: 40px;
+      z-index: 30;
+    }
+    .bg-blue {
+      background-color: blue;
+      left: 90px;
+      top: 90px;
+      z-index: 10;
+    }
+  </style>
+</head>
+<body>
+  <h1>Lorem ipsum dolor.</h1>
+   <div id="box">
+     <div class="bg-red box"></div>
+     <div class="bg-green box"></div>
+     <div class="bg-blue box"></div>
+   </div>
+  <h1>Lorem ipsum dolor sit amet.</h1>
+</body>
+</html>

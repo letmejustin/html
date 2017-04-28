@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Chapter 6</title>
+  <!--초기화 -->
+  <style>
+  * {
+      margin: 0;
+      padding: 0;
+  }
+  body {
+      font-family: 'Times New Roman', serif;
+  }
+  li {
+      list-style: none;
+  }
+  a {
+      text-decoration: none;
+  }
+  img {
+      border: 0;
+  }
+  </style>
+
+  <!--헤더 -->
+  <style>
+    #main_header {
+      height: 45px;
+      background-image: url('header_background.png');
+
+      position: relative;
+      text-align: center;
+      line-height: 45px
+    }
+    #main_header > h1{
+      color: white;
+    }
+    #main_header> a, #main_header > label {
+      display: block;
+      height: 32px;
+      position: absolute;
+    }
+  </style>
+
+  <!--스프라이트 이미지 -->
+  <style>
+  #main_header > a.left{
+    background-image: url('sprites.png');
+    background-position: -0px -0px;
+    text-indent: -9999px;
+    width: 62px;
+    left: 5px;
+    top: 7px;
+  }
+  #main_header > label.right{
+    background-image: url('sprites.png');
+    background-position: -0px -42px;
+    text-indent: -9999px;
+    width: 32px;
+    right: 5px;
+    top: 7px;
+  }
+  </style>
+
+  <!--토글 목록 -->
+  <style>
+    #toggle {display: none;}
+    #toggle + #wrap > #toggle_gnb_wrap { display: none; }
+    #toggle:checked + #wrap > #toggle_gnb_wrap {display: block;}
+
+    #toggle_gnb_wrap{
+      background-color: #363636;
+      padding: 15px;
+
+    }
+    #toggle_gnb {
+      background-color: #FFFFFF;
+      padding: 5px;
+    }
+    #toggle_gnb > ul { overflow: hidden; }
+    #toggle_gnb > ul > li {
+      width: 80px;
+      float: left;
+    }
+  </style>
+
+  <!--내비게이션(1) -->
+  <style>
+    #top_gnb {
+      overflow: hidden;
+      border: 1px solid black;
+      background-color: #B42111;
+    }
+    #top_gnb > div > a {
+      width: 25%;
+      float: left;
+
+      height: 35px;
+      line-height: 35px;
+      text-align: center;
+      color: white;
+    }
+  </style>
+
+  <!--내비게이션(2) -->
+  <style>
+    #bottom_gnb{
+      display: table;
+      width: 100%;
+
+      border-bottom: 1px solid black;
+    }
+    #bottom_gnb > div {
+      display: table-cell;
+      position: relative;
+    }
+    #bottom_gnb > div > a {
+      display: block;
+      height: 35px;
+      line-height: 35px;
+      text-align: center;
+
+    }
+    #bottom_gnb > div > a:before {
+      display: block;
+      position: absolute;
+      top: 9px;
+      left: -1px;
+      width: 1px;
+      height: 15px;
+      border-left: 1px solid black;
+      content: '';
+    }
+  </style>
+
+  <!--본문 -->
+  <style>
+  #section_header {padding: 20px;}
+  #section_article {padding: 10px;}
+  </style>
+
+  <!--푸터 -->
+  <style>
+  #main_footer {
+    padding: 10px;
+    border-top: 3px solid black;
+    text-align: center;
+  }
+  </style>
+</head>
+<body>
+  <!--
+  모바일웹
+   - 모바일전용 웹페이지를 따로 만드는 경우
+     페이스북, 네이버 등(복잡한 사이트)
+     퍼포먼스가 높음
+     모바일에만 집중할 수 있음
+
+   - 반응형으로 웹페이지를 만드는 경우
+     rwdb.kr
+     생산성이 좋음
+     웹하고 모바일하고 거의 일치
+
+     *참고사항
+     반응형이라고해도 모바일 전용 태그를 만들어서 관리할 수 있음
+     예를 들어서
+     PC에서는 보였다가 모바일에서는 안보이게 할 수 있음.
+
+   - 안만드는 경우
+-->
+  <input type="checkbox" name="" id="toggle">
+  <div id="wrap">
+
+    <header id="main_header">
+      <a href="#" class="left">main</a>
+      <h1>mobile</h1>
+      <label for="toggle" class="right">Toggle</label>
+    </header>
+    <div id="toggle_gnb_wrap">
+      <div id="toggle_gnb">
+        <ul>
+          <li><a href="#">버튼</a></li>
+          <li><a href="#">버튼</a></li>
+          <li><a href="#">버튼</a></li>
+          <li><a href="#">버튼</a></li>
+          <li><a href="#">버튼</a></li>
+          <li><a href="#">버튼</a></li>
+          <li><a href="#">버튼</a></li>
+          <li><a href="#">버튼</a></li>
+        </ul>
+
+      </div>
+    </div>
+
+  <div id="top_gnb">
+    <div><a href="#">버튼</a></div>
+    <div><a href="#">버튼</a></div>
+    <div><a href="#">버튼</a></div>
+    <div><a href="#">버튼</a></div>
+  </div>
+  <div id="bottom_gnb">
+    <div><a href="#">버튼</a></div>
+    <div><a href="#">버튼</a></div>
+    <div><a href="#">버튼</a></div>
+    <div><a href="#">버튼</a></div>
+    <div><a href="#">버튼</a></div>
+  </div>
+  <section id="main_sectoin">
+    <header id="section_header">
+      <h1>Lorem ipsum dolor.</h1>
+      <time>2017-04-22</time>
+    </header>
+    <article id="section_article">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, repellat!</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, repellat!</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, repellat!</p>
+    </article>
+  </section>
+  <footer id="main_footer">
+    <h3>Lorem ipsum dolor.</h3>
+    <address>Lorem ipsum dolor sit amet.</address>
+  </footer>
+  </div>
+
+</body>
+</html>

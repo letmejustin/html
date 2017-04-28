@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>CSS3 Property Basic</title>
+  <style>
+    .box{
+      width: 100px;
+      height: 100px;
+      position: absolute;
+    }
+
+    .red {
+      background-color: red;
+      left: 10px;
+      top: 10px;
+      z-index: 10;
+    }
+
+    .green {
+      background-color: green;
+      left: 50px;
+      top: 50px;
+      z-index: 5;
+    }
+
+    .blue {
+      background-color: blue;
+      left: 90px;
+      top: 90px;
+      z-index: 8;
+      /*
+        위아래(top/bottom) 중에 한가지 속성을 쓰고
+        좌우(left/right) 중에 한가지 속성만 씀**
+      */
+    }
+
+  </style>
+</head>
+<body>
+  <div class="box red"></div>
+  <div class="box green"></div>
+  <div class="box blue"></div>
+</body>
+</html>

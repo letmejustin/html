@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>CSS3 Property Basic</title>
+  <style>
+    .font_big { font-size: 2em;}
+    .font_italic { font-style: italic; }
+    .font_bold { font-weight: bold; }
+    .font_center { text-align: center; }
+
+    /*
+      공식 1
+      position 속성 값이 absolute 일 경우(position:absolute)에는
+      그 부모 태그의 position 속성 값은 relative이다
+
+      공식 2
+      CSS3에서 수직정렬은 두 가지 방법이 있음.
+      1) height 값과 line-height 값을 일치 시켜서 정렬을 하는 방법
+      2) display속성값이 table-cell로 지정을하고
+                   vertical-align 값을 middle로 하는 방법
+          ex)
+          display: table-cell;
+          vertical-align: middle;
+    */
+
+    .button {
+      width: 150px;
+      height: 70px;
+      background-color: #FF6A00;
+      border: 10px solid #FFFFFF;
+      border-radius: 30px;
+      box-shadow: 5px 5px 5px #A9A9A9;
+      line-height: 70px;
+    }
+
+    .button > a {
+      display: block;
+
+    }
+  </style>
+</head>
+<body>
+  <div class="button">
+    <a href="#" class="font_big font_italic font_bold font_center">Click</a></div>
+</body>
+</html>

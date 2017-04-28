@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Henny+Penny" rel="stylesheet">
+    <title>Chapter_5</title>
+    <!--
+   초기화: 웹브라우저마다 html, body에 적용된 스타일들이 다를 수 있으므로
+   생성해주는 초기코드
+  -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Times New Roman', serif;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        img {
+            border: 0;
+        }
+    </style>
+
+    <!--헤더-->
+    <style>
+        #main_header {
+            width: 960px;
+            margin: 0 auto;
+            /* 공간의 너비가 공간인 태그를 가운데 정렬하려면 margin: 0 auto;를 사용함*/
+            height: 160px;
+            position: relative;
+            /* position: absolute; 인 태그의 부모 태그의 position 속성은 relative이다. */
+        }
+
+        #main_header>#title {
+            position: absolute;
+            left: 20px;
+            top: 30px;
+        }
+
+        #main_header>#main_gnb {
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+
+        #main_header>#main_lnb {
+            position: absolute;
+            right: 0;
+            bottom: 10px;
+        }
+    </style>
+
+    <!--타이틀-->
+    <style>
+        #title {
+            font-family: 'Henny Penny', cursive;
+        }
+    </style>
+
+    <!--메뉴(1)-->
+    <style>
+        #main_gnb>ul {
+            overflow: hidden;
+        }
+        /*자식 태그가 부모 태그의 공간을 넘어설 경우 overflow 속성을 정해줌.*/
+
+        #main_gnb>ul>li {
+            float: left;
+        }
+        /*위치 속성이 float이거나 position: absolute 일 경우는 부모태그 공간을 over될 수 있음.*/
+
+        #main_gnb>ul>li>a {
+            /* a 태그의 기본 display 속성은 inline */
+            /*display 속성에서 inline은 **위아래 여백(margin, padding)**을 가질 수 없음. - 좌우 여백만 가질 수 있다.*/
+            /*display 속성 중 block은 **위아래 좌우 여백**을 가질 수 있음.*/
+            display: block;
+            padding: 2px 10px;
+            border: 1px solid black;
+        }
+
+        #main_gnb>ul>#first-child>a {
+            border-radius: 10px 0 0 10px;
+        }
+
+        #main_gnb>ul>li:last-child>a {
+            border-radius: 0 10px 10px 0;
+        }
+    </style>
+
+    <!--메뉴(2)-->
+    <style>
+        #main_lnb>ul {
+            overflow: hidden;
+        }
+
+        #main_lnb>ul>li {
+            float: left;
+        }
+
+        #main_lnb>ul>li>a {
+            /*a태그는 주로 여백으로 padding을 많이 쓰는데 그 이유는 a태그의 링크 범위가
+      padding을 포함하기 때문에*/
+            display: block;
+            padding: 10px 20px;
+            border: 1px solid black;
+        }
+
+        #main_lnb>ul>li>a:hover {
+            color: white;
+            background: black;
+        }
+
+        #main_lnb>ul>li>a:active {
+            color: red;
+            background: white;
+        }
+
+        #main_lnb>ul>li:first-child>a {
+            border-radius: 10px 0 0 10px;
+        }
+
+        #main_lnb>ul>li:last-child>a {
+            border-radius: 0 10px 10px 0;
+        }
+    </style>
+
+    <!--콘텐츠-->
+    <style>
+      #content{
+        width: 960px;
+        margin: 0 auto;
+        overflow: hidden;
+      }
+      #content > #main_section{
+        width: 750px;
+        float: left;
+      }
+      #content > #main_aside{
+        width: 200px;
+        float: right;
+      }
+    </style>
+
+    <!--본문-->
+    <style>
+      #main_section > article.main_article {
+        margin-bottom: 10px;
+        padding: 20px;
+        border: 1px solid black;
+      }
+    </style>
+
+    <!--사이드-->
+    <style>
+      #first { display: none; }
+      #tab_item1 { display: none; }
+      #first:checked ~ #tab_item1 { display: block; }
+
+      #second { display: none; }
+      #tab_item2 { display: none; }
+      #second:checked ~ #tab_item2 { display: block; }
+
+      section.buttons { overflow: hidden; }
+      section.buttons > label {
+        /*수평 정렬*/
+        display: block;
+        float: left;
+
+        /*크기 및 글자 위치 조정*/
+        width: 100px;
+        height: 30px;    /*height랑 line-height의 값이 똑같으면 수직 가운데 정렬이 됨*/
+        line-height: 30px;
+        text-align: center;
+
+        /*테두리 지정*/
+        box-sizing: border-box;
+        border: 1px solid black;
+
+        /*색상 지정*/
+        background-color: black;
+        color: white;
+
+      }
+
+      #first:checked ~ section.buttons > label:nth-child(1) {
+        background-color: white;
+        color: black;
+      }
+      #second:checked ~ section.buttons > label:nth-child(2) {
+        background-color: white;
+        color: black;
+      }
+    </style>
+
+    <!--목록-->
+    <style>
+      .item {
+        overflow: hidden;
+        padding: 10px;
+        border: 1px solid black;
+        border-top: none;
+      }
+      .thumbnail {
+        float: left;
+      }
+      .discription {
+        float: left;
+        margin-left: 10px;
+      }
+      .discription > strong { /*ellipsis는 글자가 쓰여지는 부분이 고정너비를 가지고 있어야함.*/
+        display: block;
+        width: 120px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    </style>
+
+    <!--푸터-->
+    <style>
+      #main_footer {
+        width: 960px;
+        margin: 0 auto;
+
+        box-sizing: border-box;
+        padding: 10px;
+        border: 1px solid black;
+
+        text-align: center;
+      }
+    </style>
+</head>
+
+<body>
+    <!--
+    html5에서 가장 중요한 부분: 시멘틱 태그(header, section, article 등)
+  -->
+    <header id="main_header">
+        <div id="title">
+            <h1>Lorem ipsum dolor.</h1>
+            <h2>Lorem ipsum dolor sit amet.</h2>
+        </div>
+        <!-- nav#main_gnb>ul>li>a[#]{item$}*5 -->
+        <nav id="main_gnb">
+            <ul>
+                <li id="first-child"><a href="#">item1</a></li>
+                <li><a href="#">item2</a></li>
+                <li><a href="#">item3</a></li>
+                <li><a href="#">item4</a></li>
+                <li><a href="#">item5</a></li>
+            </ul>
+        </nav>
+        <!--nav#main_lnb>ul>(li>a[#]{item$@6})*5-->
+        <nav id="main_lnb">
+            <ul>
+                <li><a href="#">item6</a></li>
+                <li><a href="#">item7</a></li>
+                <li><a href="#">item8</a></li>
+                <li><a href="#">item9</a></li>
+                <li><a href="#">item10</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!--html > head + body : head는 화면에 안보이는 정보, body: 화면에 보이는 글자들-->
+
+    <div id="content">
+        <!--section#main_section+aside#main_aside-->
+        <section id="main_section">
+            <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, earum.</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae nihil voluptatem eveniet vitae ducimus officia aspernatur, laudantium quos reprehenderit magni excepturi dolorem distinctio, impedit, amet perferendis doloribus aliquid enim
+                voluptas.</p>
+            <!--(article.main_article>h1{Lorem ipsum dolor.}+p{lorem})*3-->
+            <article class="main_article">
+              <h1>Lorem ipsum dolor.</h1>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia error, expedita voluptatibus, dolor, accusantium voluptatum ullam perspiciatis blanditiis earum ipsa vero illo dolorem est pariatur ex quis repellat eveniet soluta!</p>
+            </article>
+            <article class="main_article">
+              <h1>Lorem ipsum dolor.</h1>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia error, expedita voluptatibus, dolor, accusantium voluptatum ullam perspiciatis blanditiis earum ipsa vero illo dolorem est pariatur ex quis repellat eveniet soluta!</p>
+            </article>
+            <article class="main_article">
+              <h1>Lorem ipsum dolor.</h1>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia error, expedita voluptatibus, dolor, accusantium voluptatum ullam perspiciatis blanditiis earum ipsa vero illo dolorem est pariatur ex quis repellat eveniet soluta!</p>
+            </article>
+        </section>
+        <aside id="main_aside">
+          <input type="radio" name="tab" id="first" checked>
+          <input type="radio" name="tab" id="second">
+          <section class="buttons">
+            <label for="first">First</label>
+            <label for="second">Second</label>
+          </section>
+          <div class="tab_item" id="tab_item1">
+            <!--
+            ul>(li.item>a[#]>(div.thumbnail>img[http://placehold.it/45x45])+(div.discription>strong{aside$}+p{2017-04-22}))*4
+            -->
+            <ul>
+              <li class="item"><a href="#">
+                  <div class="thumbnail"><img src="http://placehold.it/45x45" alt=""></div>
+                  <div class="discription">
+                    <strong>aside1</strong>
+                    <p>2017-04-22</p>
+                  </div>
+                </a></li>
+              <li class="item"><a href="#">
+                  <div class="thumbnail"><img src="http://placehold.it/45x45" alt=""></div>
+                  <div class="discription">
+                    <strong>aside2</strong>
+                    <p>2017-04-22</p>
+                  </div>
+                </a></li>
+              <li class="item"><a href="#">
+                  <div class="thumbnail"><img src="http://placehold.it/45x45" alt=""></div>
+                  <div class="discription">
+                    <strong>aside3</strong>
+                    <p>2017-04-22</p>
+                  </div>
+                </a></li>
+              <li class="item"><a href="#">
+                  <div class="thumbnail"><img src="http://placehold.it/45x45" alt=""></div>
+                  <div class="discription">
+                    <strong>aside4</strong>
+                    <p>2017-04-22</p>
+                  </div>
+                </a></li>
+            </ul>
+          </div>
+          <div class="tab_item" id="tab_item2">
+            <!--
+            ul>(li.item>a[#]>(div.thumbnail>img[http://placehold.it/45x45])+(div.discription>strong{aside$}+p{2017-04-22}))*4
+            -->
+            <ul>
+              <li class="item"><a href="#">
+                  <div class="thumbnail"><img src="http://placehold.it/45x45" alt=""></div>
+                  <div class="discription">
+                    <strong>aside1</strong>
+                    <p>2017-04-22</p>
+                  </div>
+                </a></li>
+              <li class="item"><a href="#">
+                  <div class="thumbnail"><img src="http://placehold.it/45x45" alt=""></div>
+                  <div class="discription">
+                    <strong>aside2</strong>
+                    <p>2017-04-22</p>
+                  </div>
+                </a></li>
+              <li class="item"><a href="#">
+                  <div class="thumbnail"><img src="http://placehold.it/45x45" alt=""></div>
+                  <div class="discription">
+                    <strong>aside3</strong>
+                    <p>2017-04-22</p>
+                  </div>
+                </a></li>
+              <li class="item"><a href="#">
+                  <div class="thumbnail"><img src="http://placehold.it/45x45" alt=""></div>
+                  <div class="discription">
+                    <strong>aside4</strong>
+                    <p>2017-04-22</p>
+                  </div>
+                </a></li>
+            </ul>
+          </div>
+        </aside>
+    </div>
+
+    <footer id="main_footer">
+      <h3>Lorem ipsum dolor.</h3>
+      <adress>Lorem ipsum dolor sit amet.</adress>
+    </footer>
+
+
+</body>
+
+</html>

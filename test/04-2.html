@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Assignments 04-Fixed Bar</title>
+  <style>
+    * { margin: 0; padding: 0; }
+    html, body { height: 100%; }
+    #top_bar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: 50px;
+
+      background: red;
+    }
+    #bottom_bar {
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      height: 50px;
+
+      background: red;
+    }
+    #left_bar {
+      position: fixed;
+      top: 50px; bottom: 50px;
+      left: 0; width: 50px;
+
+      background: blue;
+    }
+    #right_bar {
+      position: fixed;
+      top: 50px; bottom: 50px;
+      right: 0; width: 50px;
+
+      background: blue;
+    }
+    article {
+      margin-top: 50px;
+      margin-left: 70px;
+      margin-right: 70px;
+      margin-bottom: 60px;
+    }
+  </style>
+</head>
+<body>
+  <div id="top_bar">
+    <h1>Top_Bar</h1>
+  </div>
+  <div id="Bottom_Bar">
+    <h1>Bottom_Bar</h1>
+  </div>
+  <div id="left_bar">
+    <h1>A</h1>
+  </div>
+  <div id="right_bar">
+    <h1>B</h1>
+  </div>
+  <article>
+    <h1>Lorem ipsum dolor sit amet.</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora enim facere soluta molestiae sunt cum aspernatur, officia autem itaque praesentium perspiciatis ut recusandae eius possimus repellat. Maxime impedit, sapiente adipisci.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora enim facere soluta molestiae sunt cum aspernatur, officia autem itaque praesentium perspiciatis ut recusandae eius possimus repellat. Maxime impedit, sapiente adipisci.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora enim facere soluta molestiae sunt cum aspernatur, officia autem itaque praesentium perspiciatis ut recusandae eius possimus repellat. Maxime impedit, sapiente adipisci.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora enim facere soluta molestiae sunt cum aspernatur, officia autem itaque praesentium perspiciatis ut recusandae eius possimus repellat. Maxime impedit, sapiente adipisci.</p>
+  </article>
+</body>
+</html>
